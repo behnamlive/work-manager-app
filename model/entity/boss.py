@@ -1,24 +1,25 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from model.entity import *
-class User(Base):
-    __tablename__ = 'user_tbl'
+
+class Boss(Base):
+    __tablename__ = 'boss_tbl'
     id = Column(Integer,primary_key=True)
     name = Column(String(30))
     family = Column(String(30))
     username = Column(String(30),unique=True)
     password = Column(String(30))
-    profile_image = Column(String(100))
-    roll = Column(Integer)
+    profile_image = Column(String(100),default=None)
 
-    #tu_rel = relationship("Task_User", back_populates="tu_rel_user")
-    task_rel2 = relationship("Task", secondary="Task_User", back_populates="user_rel")
+    work_rel = relationship("Work", back_populates="boss_rel")
 
-    def __init__(self,name,family,username,password,profile_image,roll):
+    def __init__(self,name,family,username,password,profile_image):
         self.name = name
         self.family = family
         self.username = username
         self.password = password
         self.profile_image = profile_image
-        self.roll = roll
 
+
+a = Boss('behnam','masoumi','behnamlive','behnam123','12345')
+print(a)
