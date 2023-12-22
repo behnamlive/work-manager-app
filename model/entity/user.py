@@ -11,8 +11,8 @@ class User(Base):
     profile_image = Column(String(100))
     roll = Column(Integer)
 
-    #tu_rel = relationship("Task_User", back_populates="tu_rel_user")
-    task_rel2 = relationship("Task", secondary="Task_User", back_populates="user_rel")
+    tu_rel = relationship("Task_User", back_populates="tu_rel_user")
+    #task_rel2 = relationship("Task", back_populates="user_rel")
 
     def __init__(self,name,family,username,password,profile_image,roll):
         self.name = name
