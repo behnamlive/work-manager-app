@@ -16,7 +16,7 @@ class TaskDa(DataBaseManager):
         self.session.close()
         return result
 
-    def find_by_Boss_id(self,work_id):
+    def find_by_work_id(self,work_id):
         self.make_engine()
         result = self.session.query(Task).filter(Task.Work.id ==work_id)
         self.session.close()
