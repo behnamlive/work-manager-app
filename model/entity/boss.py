@@ -21,5 +21,4 @@ class Boss(Base):
         self.profile_image = profile_image
 
 
-a = Boss('behnam','masoumi','behnamlive','behnam123','12345')
-print(a)
+

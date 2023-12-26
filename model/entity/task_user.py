@@ -12,7 +12,7 @@ class Task_User(Base):
     tu_rel_user = relationship("User", back_populates="tu_rel")
     tu_rel_task = relationship("Task", back_populates="tu_rel2")
 
-    def __init__(self, user,task,comment):
+    def __init__(self,user,task,comment):
         self.user = user
         self.task = task
         self.comment = comment

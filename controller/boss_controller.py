@@ -23,7 +23,7 @@ class BossController:
         try:
             da = BossDa()
             boss = Boss(name,family,username,password,profile_image)
-            Boss.id = id
+            boss.id = id
             da.edit(boss)
             return True, boss
         except Exception as e:

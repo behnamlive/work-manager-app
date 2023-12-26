@@ -13,7 +13,7 @@ class Task(Base):
     end_date = Column(DateTime, default= None)
 
 
-    #work_rel2 = relationship("Work", back_populates= "task_rel")
+    work_rel2 = relationship("Work", back_populates= "task_rel")
     tu_rel2 = relationship("Task_User", back_populates="tu_rel_task")
     #user_rel = relationship("User", back_populates="task_rel2")
 

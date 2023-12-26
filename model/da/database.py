@@ -28,7 +28,7 @@ class DataBaseManager:
         self.make_engine()
         self.session.merge(entity)
         self.session.commit()
-        self.session.refresh(entity)
+        # self.session.refresh(entity)
         return entity
 
     def remove(self, entity):
